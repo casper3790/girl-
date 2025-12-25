@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夏㵩的賽博夏威夷聖誕樹</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes wave {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            50% { transform: translateX(-20px) translateY(5px); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+        @keyframes sway {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+        @keyframes neon-pulse {
+            0%, 100% { text-shadow: 0 0 10px currentColor, 0 0 20px currentColor; }
+            50% { text-shadow: 0 0 20px currentColor, 0 0 40px currentColor; }
+        }
+        .neon-text {
+            animation: neon-pulse 2s infinite ease-in-out;
+        }
+        .cyber-sea {
+            background: linear-gradient(180deg, #000000 0%, #020617 60%, #1e1b4b 100%);
+        }
+    </style>
+</head>
+<body class="m-0 p-0 overflow-hidden font-mono text-slate-300">
+
+    <!-- 背景：賽博落日與深海 -->
+    <div class="fixed inset-0 cyber-sea -z-10">
+        <!-- 霓虹落日 -->
+        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-64 h-64 bg-rose-900 rounded-full blur-[100px] opacity-30"></div>
+        
+        <!-- 網格地面 -->
+        <div class="absolute bottom-0 w-full h-64 opacity-20 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:40px_40px] [transform:perspective(500px)_rotateX(60deg)]"></div>
+
+        <!-- 虛擬海浪 -->
+        <div class="absolute bottom-0 w-[200%] h-32 bg-cyan-500/10 animate-[wave_10s_infinite_ease-in-out]" style="border-radius: 40% 60% 70% 30% / 40% 50% 60% 40%;"></div>
+    </div>
+
+    <div class="flex flex-col items-center justify-end min-h-screen pb-12 relative">
+        
+        <!-- 樹頂：夏㵩專屬星星 -->
+        <div class="mb-[-20px] z-30 flex flex-col items-center">
+            <div class="relative">
+                <div class="absolute inset-0 bg-yellow-400 blur-2xl opacity-40 rounded-full animate-pulse"></div>
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="#fbbf24" class="relative hover:rotate-180 transition-transform duration-700">
+                    <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
+                </svg>
+            </div>
+            <div class="text-xl font-black text-yellow-400 neon-text mt-2 tracking-widest">
+                夏㵩's Star
+            </div>
+        </div>
+
+        <!-- 霓虹椰子樹冠 -->
+        <div class="relative flex flex-col items-center animate-[sway_6s_infinite_ease-in-out]">
+            
+            <!-- 第一層葉子 -->
+            <div class="flex gap-12 mb-[-10px]">
+                <div class="text-cyan-400 font-bold text-xl drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">&lt;header id="夏㵩_Left"&gt;</div>
+                <div class="text-cyan-400 font-bold text-xl drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">&lt;header id="夏㵩_Right"&gt;</div>
+            </div>
+
+            <!-- 第二層葉子 (裝飾) -->
+            <div class="flex gap-24 mb-[-10px] items-center">
+                <div class="text-fuchsia-400 font-bold text-2xl flex flex-col items-center neon-text">
+                    <span>const aloha = true;</span>
+                    <span class="text-4xl mt-3 animate-bounce">🍍</span>
+                </div>
+                <!-- 椰子 (代碼球) -->
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 bg-slate-900 rounded-full flex items-center justify-center text-[10px] text-cyan-300 border border-cyan-500 shadow-[0_0_15px_rgba(6,182,212,0.5)]">0xCOCO</div>
+                    <div class="w-12 h-12 bg-slate-900 rounded-full flex items-center justify-center text-[10px] text-cyan-300 border border-cyan-500 shadow-[0_0_15px_rgba(6,182,212,0.5)]">0xNUT</div>
+                </div>
+                <div class="text-fuchsia-400 font-bold text-2xl flex flex-col items-center neon-text">
+                    <span>export default '🏖️';</span>
+                    <span class="text-4xl mt-3 animate-bounce" style="animation-delay: 0.5s">🌺</span>
+                </div>
+            </div>
+
+            <!-- 第三層葉子 -->
+            <div class="flex gap-40">
+                <div class="text-emerald-400 italic text-3xl neon-text">while(surfing) { 夏㵩(); }</div>
+                <div class="text-emerald-400 italic text-3xl neon-text">Array.from('🌊')</div>
+            </div>
+        </div>
+
+        <!-- 樹幹 -->
+        <div class="flex flex-col items-center relative z-10">
+            <div class="w-16 h-12 bg-slate-900 border-x-2 border-slate-700 flex items-center justify-center text-slate-500 text-[10px] font-bold">ROOT</div>
+            <div class="w-20 h-12 bg-slate-900 border-x-2 border-slate-700 flex items-center justify-center text-slate-500 text-[10px] font-bold">TRUNK</div>
+            <div class="w-24 h-12 bg-slate-950 border-x-2 border-slate-600 flex items-center justify-center text-cyan-400 text-xs font-black shadow-[0_0_20px_rgba(34,211,238,0.2)]">SUMMER_YE</div>
+        </div>
+
+        <!-- 沙灘裝飾區 -->
+        <div class="flex items-end gap-16 mt-6 z-20 h-32">
+            <!-- 衝浪板 -->
+            <div class="w-10 h-32 bg-gradient-to-b from-rose-500 to-purple-600 rounded-full border border-white/20 flex flex-col items-center justify-center shadow-[0_0_20px_rgba(244,63,94,0.3)] rotate-[-10deg] animate-[float_4s_infinite]">
+                <span class="text-[8px] font-black text-white rotate-90 whitespace-nowrap uppercase tracking-tighter">夏㵩 SurfBoard</span>
+            </div>
+
+            <!-- 烏克麗麗 -->
+            <div class="flex flex-col items-center group cursor-pointer">
+                <div class="text-5xl group-hover:scale-125 transition-transform drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">🎸</div>
+                <div class="text-[10px] mt-2 font-bold text-cyan-400">play_music();</div>
+            </div>
+            
+            <!-- 螃蟹 -->
+            <div class="mb-4 relative group cursor-pointer">
+                <div class="text-5xl animate-bounce">🦀</div>
+                <div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-slate-800 text-cyan-300 px-3 py-1 rounded-full text-xs font-bold border border-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                    夏㵩 Coding...
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部終端機標籤 -->
+        <div class="mt-8 bg-black/60 backdrop-blur-xl px-12 py-6 rounded-t-3xl border-t-2 border-cyan-500/50 shadow-[0_-20px_50px_rgba(6,182,212,0.2)] relative min-w-[400px]">
+            <div class="flex gap-2 mb-4">
+                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            </div>
+            
+            <h1 class="text-2xl font-black text-white tracking-[0.3em] text-center uppercase">
+                &lt;夏㵩_Christmas_2025 /&gt;
+            </h1>
+            <p class="text-cyan-400 text-sm mt-3 text-center font-bold">
+                [SYSTEM] Aloha! 夏㵩的夏威夷假期模組加載成功...
+            </p>
+            <div class="flex justify-center gap-4 mt-4 text-[10px] text-slate-500 font-bold tracking-widest uppercase">
+                <span class="text-emerald-500">Online</span>
+                <span>|</span>
+                <span>User: 夏㵩</span>
+                <span>|</span>
+                <span>Loc: Hawaii_Server</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 背景動態飄落物 -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
+        <div class="absolute top-[-10%] left-[10%] animate-[fall_8s_infinite] text-2xl">🌸</div>
+        <div class="absolute top-[-10%] left-[40%] animate-[fall_6s_infinite] text-cyan-400 font-bold">{ }</div>
+        <div class="absolute top-[-10%] left-[70%] animate-[fall_10s_infinite] text-2xl">🐚</div>
+        <div class="absolute top-[-10%] left-[85%] animate-[fall_7s_infinite] text-fuchsia-500 font-bold">=&gt;</div>
+    </div>
+
+    <script>
+        document.addEventListener('click', (e) => {
+            const items = ['夏', '㵩', '⚡', '🌺', '🌊', '0x1'];
+            const bubble = document.createElement('div');
+            bubble.className = 'fixed pointer-events-none text-2xl z-50 animate-ping text-cyan-400 font-bold';
+            bubble.style.left = e.clientX + 'px';
+            bubble.style.top = e.clientY + 'px';
+            bubble.innerHTML = items[Math.floor(Math.random() * items.length)];
+            document.body.appendChild(bubble);
+            setTimeout(() => bubble.remove(), 800);
+        });
+    </script>
+
+    <style>
+        @keyframes fall {
+            from { transform: translateY(-100px) rotate(0deg); }
+            to { transform: translateY(110vh) rotate(360deg); }
+        }
+    </style>
+</body>
+</html>
